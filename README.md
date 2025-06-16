@@ -1,75 +1,92 @@
-# ⚠️ Importante!!!
-Você pode escolher qualquer um dos desafios para desenvolver. Sinta-se à vontade para começar pelo desafio que mais lhe interessa.
+SIMULADOR DE MOVIMENTO DE PEÇAS DE XADREZ EM C
+==============================================
 
-# Desafio de Xadrez - MateCheck
+Este projeto consiste em um programa de console escrito em linguagem C que simula o movimento de quatro peças de xadrez: a Torre, o Bispo, a Rainha e o Cavalo. O objetivo principal é demonstrar diferentes técnicas de programação, incluindo RECURSIVIDADE, LOOPS ANINHADOS e CONTROLE DE FLUXO AVANÇADO com 'continue'.
 
-Bem-vindo ao desafio de Xadrez da MateCheck! Este projeto tem como objetivo testar e determinar os limites de utilização do código dentro do jogo utilizando estruturas de repetição e funções avançadas.
 
-## Níveis do Desafio
+RECURSOS DEMONSTRADOS
+---------------------
 
-### 🏅 Nível Novato
+O programa utiliza uma abordagem diferente para cada peça, a fim de ilustrar diversos conceitos de programação:
 
-A equipe de testes da MateCheck recebeu uma solicitação para determinar os limites de utilização do código dentro do jogo. Para isso, a equipe de programação solicitou o envio de blocos de código contendo loops (estruturas de repetição) para avaliação de desempenho e possibilidades de aplicação.
+* Torre: Movimento linear simulado através de uma função RECURSIVA.
+* Bispo: Movimento diagonal simulado combinando RECURSIVIDADE com LOOPS ANINHADOS triviais dentro de cada chamada recursiva.
+* Rainha: Movimento linear simulado através de uma função RECURSIVA.
+* Cavalo: Movimento em "L" implementado com um LOOP 'for' COMPLEXO, que utiliza múltiplas variáveis de estado e a instrução 'continue' para controlar a lógica sequencial do movimento.
 
-**Movimentação das Peças:**
-- Bispo: 5 casas na diagonal superior direita
-- Torre: 5 casas para a direita
-- Rainha: 8 casas para a esquerda
 
-No jogo, apenas possuímos movimentação para quatro direções, mas o Bispo se mexe na diagonal. Com isso, foi adicionada uma condição para movimentação dessa peça, em que, para movê-lo, utilizamos o comando `printf` e, em seu valor, colocamos a direção usando a combinação de direções básicas. 
+PRÉ-REQUISITOS
+--------------
 
-**Requisitos Funcionais:**
-1. **Entrada de Dados:**
-   - Os valores necessários devem ser inseridos manualmente a partir de variáveis dentro do código.
-   - Será permitido o uso de constantes para facilitar a escrita do código e evitar repetição de valores.
-2. **Estruturas de Repetição:**
-   - Os códigos precisam ser desenvolvidos utilizando estruturas de repetição.
-3. **Saída de Dados:**
-   - O sistema deve exibir os resultados de cada procedimento de forma clara e legível.
+Para compilar e executar este programa, você precisará de:
+* Um sistema operacional (Linux, macOS, Windows com WSL, etc.).
+* Um compilador C instalado, como o GCC (GNU Compiler Collection).
 
-**Requisitos Não Funcionais:**
-1. **Performance:**
-   - O sistema deve executar os cálculos e apresentar os resultados sem atrasos perceptíveis.
-2. **Documentação:**
-   - O código deve ser bem documentado, incluindo comentários detalhados sobre a função de cada parte do código.
-3. **Manutenibilidade:**
-   - O código deve ser escrito de forma clara, empregando nomes de variáveis que permitam o fácil entendimento.
 
-**Instruções Detalhadas:**
-1. **Entrada de Dados:**
-   - Inclua a biblioteca padrão de entrada e saída no início do seu programa.
-   - Declare variáveis constantes para definir os valores a serem comparados dentro das estruturas condicionais.
-2. **Estruturas de Repetição:**
-   - Utilize cada uma das diferentes estruturas de repetição apresentadas.
-3. **Saída:**
-   - As saídas deverão ser mostradas de forma clara e organizada, com a direção da peça.
+COMO COMPILAR E EXECUTAR
+------------------------
 
-**Nomenclatura:**
+Siga os passos abaixo para rodar o programa a partir do seu terminal.
 
-printf("Cima\n");
-printf("Baixo\n");
-printf("Esquerda\n");
-printf("Direita\n");
+1. Salve o Código
+   Primeiramente, salve o código fornecido em um arquivo chamado `simulador_xadrez.c`.
 
-### 🏅 Nível Aventureiro
-Agora que já conseguimos mover as peças mais simples usando loops, os desenvolvedores pediram para elaborar os loops de outra forma. Para o desafio, moveremos o cavalo, que possui sua movimentação em L. O cavalo deve se movimentar para baixo e para a esquerda, usando pelo menos duas estruturas de repetição: uma deve ser for e a outra pode ser while ou do-while.
+2. Abra um Terminal
+   Navegue até o diretório onde você salvou o arquivo `simulador_xadrez.c`.
 
-**Movimentação do Cavalo:**
+3. Compile o Programa
+   Execute o seguinte comando para compilar o código. Este comando irá ler o seu arquivo fonte (`simulador_xadrez.c`) e criar um arquivo executável chamado `simulador_xadrez`.
 
-Mover o cavalo em L utilizando loops aninhados.
-Obs: É obrigatório o uso de loops aninhados.
+   gcc simulador_xadrez.c -o simulador_xadrez
 
-### 🥇 Nível Mestre
-Para o desafio final, as peças que utilizam loops simples terão seus códigos trocados por **funções recursivas**, e a movimentação do cavalo utilizará loops com variáveis múltiplas e/ou condições múltiplas, permitindo o uso de continue e break.
+4. Execute o Programa
+   Após a compilação bem-sucedida, execute o programa com o seguinte comando:
 
-**Movimentação das Peças:**
+   ./simulador_xadrez
 
-**Bispo**: 5 casas na diagonal direita para cima
-**Torre**: 5 casas para a direita
-**Rainha**: 8 casas para a esquerda
-**Cavalo**: 1 vez em L para cima à direita
-Obs: É obrigatório o uso de loops aninhados na movimentação do bispo e funções recursivas.
 
-Ao concluir este desafio, você terá um conhecimento mais profundo de estruturas complexas e elaboradas, amplamente utilizadas no mercado de trabalho. Boa sorte e boa programação!
+SAÍDA ESPERADA
+--------------
 
-Equipe de Ensino - MateCheck
+Ao executar o programa, você verá a seguinte saída no seu console, mostrando o log de movimento para cada uma das quatro peças:
+
+--- Movimento da Torre (5 casas para a direita) ---
+Direita
+Direita
+Direita
+Direita
+Direita
+
+--- Movimento do Bispo (5 casas para cima e direita) ---
+Cima, Direita
+Cima, Direita
+Cima, Direita
+Cima, Direita
+Cima, Direita
+
+--- Movimento da Rainha (8 casas para a esquerda) ---
+Esquerda
+Esquerda
+Esquerda
+Esquerda
+Esquerda
+Esquerda
+Esquerda
+Esquerda
+
+--- Movimento do Cavalo (2 para cima, 1 para a direita) ---
+Cima
+Cima
+Direita
+
+
+ESTRUTURA DO CÓDIGO
+-------------------
+
+O código-fonte está organizado da seguinte forma para garantir legibilidade e boas práticas:
+
+* Protótipos de Funções: As funções recursivas são declaradas no topo, antes da 'main', para que o compilador saiba de suas existências antes de serem chamadas.
+* Função 'main': Atua como o ponto de entrada e o orquestrador principal, chamando as simulações para cada peça em sequência.
+* Implementação das Funções: As definições completas das funções recursivas são colocadas após a 'main'.
+* Constantes: Os parâmetros de movimento (número de casas, etc.) são definidos como constantes no início da 'main', facilitando futuras modificações.
+* Comentários: O código é extensivamente comentado para explicar a lógica por trás da recursividade, dos loops complexos e das decisões de implementação.
